@@ -1,8 +1,7 @@
 Положим, что у таблиц продуктов (Products) и категорий (Categories) структуры вида (Id (INT), ProductName (TEXT)) и (Id (INT), CategoryName (TEXT)) соответственно, где Id -- PrimaryKey.
 Так как между продуктами и категориями связь многие ко многим, для быстрого поиска категории по продукту и наоборот оптимально такую информацию хранить в двух разных таблицах. В первой таблице CategoriesByProduct (ProductId, CategoryId) и PRIMARY KEY (ProductId, CategoryId), во второй таблице ProductsByCategory(CategoryId, ProductId) и PRIMARY KEY (CategoryId, ProductId).
 
-Для запроса выбора всех пар «Имя продукта – Имя категории» воспользуемся первой таблицей, т.к. нужно вывести каждое название продукта.
-Тогда итоговый запрос:
+Тогда один из вариантов итогового запроса:
 
 select ProductName, CategoryName
 from Products
